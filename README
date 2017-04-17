@@ -1,0 +1,4 @@
+Hello yes,
+
+run export SLACK_BOT_TOKEN='TOKEN' in terminal, then
+python bubfactsbot.py will start the bot
