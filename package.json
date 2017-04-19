@@ -1,0 +1,16 @@
+{
+  "name": "bubfacts-slackbot",
+  "version": "1.0.0",
+  "description": "A bot for the bubfacts which spits out... bubfacts",
+  "main": "bubfactsbot.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Joel",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^3.9.0",
+    "dotenv": "^4.0.0",
+    "sqlite3": "^3.1.8"
+  }
+}
