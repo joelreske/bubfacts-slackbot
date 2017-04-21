@@ -44,9 +44,10 @@ rtm.start();
 rtm.on(RTM_EVENTS.MESSAGE, function handleRtmReactionAdded(message) {
   if(message.text.includes("<@"+BOT_ID+">")){
     message.text = message.text.replace("<@"+BOT_ID+">", "");
-    var query = "SELECT * FROM bubs WHERE instr(\"" + message.text + "\", first) > 0";
-    query += " OR instr(\"" + message.text + "\", last) > 0";
-    query += " OR instr(\"" + message.text + "\", bub_year) > 0";
+    message.text = message.text.toLowerCase();
+    var query = "SELECT * FROM bubs WHERE instr(\"" + message.text + "\", LOWER(first)) > 0";
+    query += " OR instr(\"" + message.text + "\", LOWER(last)) > 0";
+    query += " OR instr(\"" + message.text + "\", LOWER(bub_year)) > 0";
 
     console.log(query);
     db.each(query, function(err, row) {
