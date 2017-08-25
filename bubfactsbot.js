@@ -10,7 +10,7 @@ const express = require('express')
 const app = express()
 
 app.post('/commands/bubfacts', function (req, res) {
-  let payload = req.body
+  // let payload = req.body
 
   // if (!payload || payload.token !== config('STARBOT_COMMAND_TOKEN')) {
   //   let err = '✋  Star—what? An invalid slash token was provided\n' +
