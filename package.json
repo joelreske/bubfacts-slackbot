@@ -9,8 +9,8 @@
   "author": "Joel",
   "license": "ISC",
   "dependencies": {
-    "@slack/client": "^3.9.0",
     "dotenv": "^4.0.0",
+    "express": "^4.15.4",
     "http": "0.0.0",
     "request": "^2.81.0",
     "sqlite3": "^3.1.8"
