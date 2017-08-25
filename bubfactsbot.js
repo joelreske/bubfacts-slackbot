@@ -6,8 +6,6 @@ var http = require('http');
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('bubfacts.db');
 
-var bot_token = process.env.SLACK_BOT_TOKEN || '';
-
 const express = require('express')
 const app = express()
 
@@ -37,8 +35,15 @@ app.post('/commands/bubfacts', function (req, res) {
   // });
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(process.env.PORT, (err) => {
+  if (err) throw err
+
+  console.log(`\n🚀  Starbot LIVES on PORT ${process.env.PORT} 🚀`)
+
+  if (process.env.SLACK_TOKEN) {
+    console.log(`🤖  beep boop: @starbot is real-time\n`)
+    bot.listen({ token: process.env.SLACK_TOKEN })
+  }
 })
 
 var request = require('request');
