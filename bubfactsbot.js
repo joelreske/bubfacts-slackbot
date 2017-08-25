@@ -23,8 +23,8 @@ app.post('/commands/bubfacts', function (req, res) {
     return
   }
 
-  payload.text = message.text.replace("<@"+BOT_ID+">", "");
-  payload.text = message.text.toLowerCase();
+  payload.text = payload.text.replace("<@"+BOT_ID+">", "");
+  payload.text = payload.text.toLowerCase();
   var query = "SELECT * FROM bubs WHERE instr(\"" + payload.text + "\", LOWER(first)) > 0";
   query += " OR instr(\"" + payload.text + "\", LOWER(last)) > 0";
   query += " OR instr(\"" + payload.text + "\", LOWER(bub_year)) > 0";
