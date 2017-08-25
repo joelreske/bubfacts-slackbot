@@ -41,12 +41,7 @@ app.post('/commands/bubfacts', function (req, res) {
 app.listen(process.env.PORT, (err) => {
   if (err) throw err
 
-  console.log(`\n🚀  Starbot LIVES on PORT ${process.env.PORT} 🚀`);
-
-  if (process.env.SLACK_TOKEN) {
-    console.log(`🤖  beep boop: @starbot is real-time\n`);
-    bot.listen({ token: process.env.SLACK_TOKEN });
-  }
+  console.log(`\n🚀  BubBot LIVES on PORT ${process.env.PORT} 🚀`);
 });
 
 var request = require('request');
