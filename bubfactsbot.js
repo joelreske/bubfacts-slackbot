@@ -8,6 +8,9 @@ var db = new sqlite3.Database('bubfacts.db');
 
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.post('/commands/bubfacts', function (req, res) {
   let payload = req.body
