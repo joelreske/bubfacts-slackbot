@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.post('/commands/bubfacts', function (req, res) {
   let payload = req.body
 
-  if (!payload || payload.token !== config('STARBOT_COMMAND_TOKEN')) {
+  if (!payload || payload.token !== process.env.SLACK_TOKEN) {
     let err = '✋  Star—what? An invalid slash token was provided\n' +
               '   Is your Slack slash token correctly configured?'
     console.log(err)
